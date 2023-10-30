@@ -45,7 +45,7 @@ const Navbar = () => {
           <Button
             type="button"
             title="Login"
-            icon={<LuUser2 size={20} />}
+            icon_start={<LuUser2 size={20} />}
             variant="btn_dark"
           />
         </div>
@@ -58,15 +58,16 @@ const Navbar = () => {
             <SheetContent>
               <SheetHeader>
                 <SheetTitle>Menu</SheetTitle>
+                <div className="py-4">
+                  <Button
+                    type="button"
+                    title="Login"
+                    icon_start={<LuUser2 size={20} />}
+                    variant="btn_dark_mobile"
+                  />
+                </div>
                 <Separator className="my-4" />
-                <Button
-                  type="button"
-                  title="Login"
-                  icon={<LuUser2 size={20} />}
-                  variant="btn_dark_mobile"
-                />
-                <Separator className="my-4" />
-                <SheetDescription>
+                <SheetDescription className="pt-4">
                   <ul className="h-full space-y-2">
                     {NAV_LINKS.map((link) => (
                       <Link
