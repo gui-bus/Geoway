@@ -12,7 +12,7 @@ import Image from "next/image";
 
 const Camp = () => {
   return (
-    <section className="w-full select-none container">
+    <section className="w-full select-none">
       <Swiper
         slidesPerView={"auto"}
         className="my-swiper-1 h-full w-full object-cover"

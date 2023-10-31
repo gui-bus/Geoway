@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { HiStar } from "react-icons/hi2";
 import { HiPlay, HiX } from "react-icons/hi";
 import Button from "../common/Button";
