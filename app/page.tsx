@@ -1,5 +1,17 @@
+import Camp from "@/components/sections/Camp";
+import Features from "@/components/sections/Features";
+import GetApp from "@/components/sections/GetApp";
+import Guide from "@/components/sections/Guide";
+import Hero from "@/components/sections/Hero";
+
 export default function Home() {
   return (
-    <h1 className="text-amber-300 text-4xl font-bold">Homepage</h1>
-  )
+    <>
+      <Hero />
+      <Camp />
+      <Guide />
+      <Features />
+      <GetApp />
+    </>
+  );
 }
