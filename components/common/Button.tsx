@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 
 type ButtonProps = {
-  type: "button" | "submit";
-  title: string;
+  type?: "button" | "submit";
+  title?: string;
   icon_start?: ReactNode | string;
   icon_end?: ReactNode | string;
-  variant: string;
+  variant?: string;
 };
 
 const Button = ({

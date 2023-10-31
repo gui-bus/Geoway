@@ -12,10 +12,10 @@ import Image from "next/image";
 
 const Camp = () => {
   return (
-    <section className="w-full select-none px-2">
+    <section className="w-full select-none">
       <Swiper
         slidesPerView={"auto"}
-        className="my-swiper-1 h-[50vh] md:h-[90vh] object-cover "
+        className="my-swiper-1 h-full w-full object-cover"
         navigation={{
           enabled: true,
           prevEl: ".swiper-button-prev",
@@ -24,22 +24,23 @@ const Camp = () => {
         modules={[Navigation]}
       >
         <div className="swiper-button-prev">
-          <FaCircleChevronLeft />
+          <FaCircleChevronLeft className="bg-white rounded-full" />
         </div>
         {campsiteData.map((data, index) => (
-          <SwiperSlide key={index} className="px-2">
+          <SwiperSlide key={index}>
             <CampSite {...data} />
           </SwiperSlide>
         ))}
         <div className="swiper-button-next">
-          <FaCircleChevronRight />
+          <FaCircleChevronRight className="bg-white rounded-full" />
         </div>
       </Swiper>
 
-      <div className="flexEnd mt-10 px-6 lg:-mt-60 lg:mr-6 z-50 relative text-center md:text-left">
-        <div className="bg-green-50 p-8 lg:max-w-[500px] xl:max-w-[734px] xl:rounded-5xl xl:p-12 relative w-full overflow-hidden rounded-3xl">
+      <div className="flexEnd mt-10 px-6 lg:-mt-60  z-50 relative text-center md:text-left">
+        <div className="bg-green-50 p-8 lg:max-w-[500px] xl:max-w-[734px] xl:rounded-5xl xl:p-12 relative w-full overflow-hidden rounded-3xl drop-shadow-2xl">
           <h2 className="regular-24 md:regular-32 2xl:regular-64 text-white">
-            <strong>Está se sentindo perdido</strong> e sem saber qual caminho seguir?
+            <strong>Está se sentindo perdido</strong> e sem saber qual caminho
+            seguir?
           </h2>
           <p className="regular-14 xl:regular-16 mt-5 text-white">
             A razão pela qual estamos aqui é para pessoas como você, que anseiam

@@ -15,17 +15,10 @@ const Hero = () => {
       animate="show"
       exit="hidden"
     >
-      <section className="max-container padding-container flex flex-col gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row">
+      <section className="container flex flex-col gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row">
         <div className="hero-map" />
 
         <div className="relative z-20 flex flex-1 flex-col xl:w-1/2">
-          <Image
-            src="/camp.svg"
-            alt="Acampamento"
-            height={50}
-            width={50}
-            className="absolute left-[-0.3125rem] top-[-2.875rem] w-10 lg:w-[3.125rem] h-auto"
-          />
           <h1 className="bold-52 lg:bold-64 xl:whitespace-nowrap tracking-tighter">
             Mapeando Aventuras
           </h1>
@@ -54,7 +47,7 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-col w-full gap-3 sm:flex-row">
-            <Button type="button" title="Download App" variant="btn_green" />
+            <Button type="button" title="Download App" variant="btn_dark" />
 
             <Button
               type="button"
