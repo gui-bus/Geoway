@@ -56,6 +56,7 @@ const Footer = () => {
                 <ul className="regular-14 flex gap-4 text-gray-30">
                   {SOCIALS.links.map((link) => (
                     <Link
+                      key={link.href}
                       target="_blank"
                       href={link.href}
                       className="transition-all duration-300 hover:text-green-50"
