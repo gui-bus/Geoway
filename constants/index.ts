@@ -9,10 +9,10 @@ export const NAV_LINKS = [
 
 // CAMP SECTION
 export const PEOPLE_URL = [
-  "/person-1.png",
-  "/person-2.png",
-  "/person-3.png",
-  "/person-4.png",
+  "https://i.pravatar.cc/200",
+  "https://i.pravatar.cc/201",
+  "https://i.pravatar.cc/202",
+  "https://i.pravatar.cc/203",
 ];
 
 // FEATURES SECTION
@@ -50,37 +50,43 @@ export const FEATURES = [
 // FOOTER SECTION
 export const FOOTER_LINKS = [
   {
-    title: "Learn More",
+    title: "Institucional",
     links: [
-      "About Hilink",
-      "Press Releases",
-      "Environment",
-      "Jobs",
-      "Privacy Policy",
-      "Contact Us",
+      "Sobre a Geoway",
+      "Trabalhe Conosco",
+      "Contato",
+      "Missão e Valores",
+      "Equipe Geoway",
     ],
   },
   {
-    title: "Our Community",
-    links: ["Climbing xixixi", "Hiking hilink", "Hilink kinthill"],
+    title: "Dúvidas Gerais",
+    links: [
+      "Funcionamento do App",
+      "Formas de Pagamento",
+      "FAQ",
+      "Garantia de Qualidade",
+      "Política de Devolução",
+    ],
+  },
+  {
+    title: "Suporte",
+    links: [
+      "Contato de Suporte",
+      "Guia do Usuário",
+      "Problemas Técnicos",
+      "Central de Ajuda",
+      "Chat ao Vivo",
+    ],
   },
 ];
-
-export const FOOTER_CONTACT_INFO = {
-  title: "Contact Us",
-  links: [
-    { label: "Admin Officer", value: "123-456-7890" },
-    { label: "Email Officer", value: "hilink@akinthil.com" },
-  ],
-};
 
 export const SOCIALS = {
   title: "Social",
   links: [
-    "/facebook.svg",
-    "/instagram.svg",
-    "/twitter.svg",
-    "/youtube.svg",
-    "/wordpress.svg",
+    { icon: "FaLinkedinIn", href: "https://www.linkedin.com/in/gui-bus/" },
+    { icon: "FaGithub", href: "https://github.com/gui-bus" },
+    { icon: "FaInstagram", href: "https://www.instagram.com/guibus_dev/" },
+    { icon: "FaXTwitter", href: "https://twitter.com/guibus_dev" },
   ],
 };
