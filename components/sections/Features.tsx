@@ -1,38 +1,63 @@
+"use client";
 import { FEATURES } from "@/constants";
 import Image from "next/image";
 import { HiCalendarDays } from "react-icons/hi2";
 import { HiLocationMarker, HiVolumeUp } from "react-icons/hi";
-import { LuWifiOff } from 'react-icons/lu'
+import { LuWifiOff } from "react-icons/lu";
+
+import { motion } from "framer-motion";
+import { fadeIn } from "@/animation/variants";
+import { useInView } from "react-intersection-observer";
 
 const Features = () => {
-  return (
-    <section className="container flex-col flexCenter overflow-hidden bg-feature-bg bg-center bg-no-repeat py-24">
-      <div className="maxContainer relative flex w-full justify-end">
-        <div className="flex flex-1 lg:min-h-[900px]">
-          <Image
-            src="/phone.png"
-            alt="Phone"
-            width={440}
-            height={1000}
-            className="feature-phone"
-          />
-        </div>
+  const [ref, inView] = useInView({ triggerOnce: false });
+  const [refFeatures, inViewFeatures] = useInView({ triggerOnce: false });
 
-        <div className="z-20 flex w-full flex-col lg:w-[60%]">
-          <h2 className="bold-32 lg:bold-64">Funcionalidades</h2>
-          <ul className="mt-10 grid gap-10 md:grid-cols-2 lg:mt-20 lg:gap-20">
-            {FEATURES.map((feature) => (
-              <FeatureItem
-                title={feature.title}
-                key={feature.title}
-                icon={feature.icon}
-                description={feature.description}
-              />
-            ))}
-          </ul>
+  return (
+    <motion.div
+      variants={fadeIn("left", 0)}
+      initial="hidden"
+      animate={inView ? "show" : "hidden"}
+      exit="hidden"
+    >
+      <section
+        ref={ref}
+        className="container flex-col flexCenter overflow-hidden bg-feature-bg bg-center bg-no-repeat py-24"
+      >
+        <div className="maxContainer relative flex w-full justify-end">
+          <div className="flex flex-1 lg:min-h-[900px]">
+            <Image
+              src="/phone.png"
+              alt="Phone"
+              width={440}
+              height={1000}
+              className="feature-phone"
+            />
+          </div>
+
+          <div className="z-20 flex w-full flex-col lg:w-[60%]">
+            <h2 className="bold-32 lg:bold-64">Funcionalidades</h2>
+            <motion.div
+              variants={fadeIn("right", 0)}
+              initial="hidden"
+              animate={inViewFeatures ? "show" : "hidden"}
+              exit="hidden"
+            >
+              <ul ref={refFeatures} className="mt-10 grid gap-10 md:grid-cols-2 lg:mt-20 lg:gap-20">
+                {FEATURES.map((feature) => (
+                  <FeatureItem
+                    title={feature.title}
+                    key={feature.title}
+                    icon={feature.icon}
+                    description={feature.description}
+                  />
+                ))}
+              </ul>
+            </motion.div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </motion.div>
   );
 };
 

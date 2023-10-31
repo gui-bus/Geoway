@@ -5,19 +5,31 @@ import Button from "../common/Button";
 
 import { motion } from "framer-motion";
 import { fadeIn } from "@/animation/variants";
+import { useInView } from "react-intersection-observer";
 
 const Hero = () => {
+  const [ref, inView] = useInView({ triggerOnce: false });
+  const [refInfo, inViewInfo] = useInView({ triggerOnce: false });
+  const [refMap, inViewMap] = useInView({ triggerOnce: false });
+
   return (
     <motion.div
       variants={fadeIn("up", 0)}
       initial="hidden"
-      animate="show"
+      animate={inView ? "show" : "hidden"}
       exit="hidden"
+      className="xl:container"
     >
-      <section className="container flex flex-col gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row">
+      <section
+        ref={ref}
+        className="container flex flex-col gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row"
+      >
         <div className="hero-map" />
 
-        <div className="relative z-20 flex flex-1 flex-col xl:w-1/2">
+        <div
+          ref={refInfo}
+          className="relative z-20 flex flex-1 flex-col xl:w-1/2"
+        >
           <h1 className="bold-52 lg:bold-64 xl:whitespace-nowrap tracking-tighter">
             Mapeando Aventuras
           </h1>
@@ -57,7 +69,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="relative flex flex-1 items-start">
+        <div ref={refMap} className="relative flex flex-1 items-start">
           <div className="relative z-20 flex w-[16.75rem] flex-col gap-8 rounded-3xl bg-gray-1 px-7 py-8 mt-5">
             <div className="flex flex-col">
               <div className="flexBetween">
