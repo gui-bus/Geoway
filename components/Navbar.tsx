@@ -17,7 +17,7 @@ import { Separator } from "./ui/separator";
 const Navbar = () => {
   return (
     <header>
-      <nav className="flexBetween max-container padding-container relative z-30 py-5">
+      <nav className="flexBetween container padding-container relative z-30 py-5">
         <Link href="/">
           <Image
             src="/logo.png"
