@@ -24,7 +24,7 @@
     @apply border-gray-20 bg-green-90 px-8 py-5 text-white;
   }
 
-  .max-container {
+  .maxContainer {
     @apply mx-auto max-w-[1440px];
   }
 
@@ -219,5 +219,11 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+
+  .swiper .swiper-button-prev,
+  .swiper .swiper-button-next {
+    @apply after:hidden mx-4 w-10 h-10 md:w-14 md:h-14 -translate-y-10 mt-0 text-white;
   }
 }
